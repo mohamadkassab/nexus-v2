@@ -99,7 +99,7 @@ He is known for his ability to turn complex ideas into operationally strong conc
   },
   {
     name: "Paul Richards",
-    role: "Technical Director",
+    role: "Technical Director <br> Partner",
     image: "src/teams/paul.webp",
     bio: `
     Paul brings more than 35 years of experience in the Middle East across commercial HVAC and 
@@ -114,7 +114,7 @@ He is known for his ability to turn complex ideas into operationally strong conc
   },
   {
     name: "Jayadev Kalliat",
-    role: "Director of Operations",
+    role: "Director of Operations <br> Partner",
     image: "src/teams/jayadev.webp",
     bio: `
     With a background in mechanical engineering and over 17 years of experience across the GCC, 
@@ -128,7 +128,7 @@ He is known for his ability to turn complex ideas into operationally strong conc
   },
   {
     name: "Ivan Garbas",
-    role: "Production Director",
+    role: "Production Director <br> Partner",
     image: "src/teams/ivan.webp",
     bio: `A mechanical engineer with 27 years of experience, Ivan began his career in a leading Slovenian 
     modular kitchen manufacturer, later becoming Head of R&D. 
@@ -142,7 +142,7 @@ He is known for his ability to turn complex ideas into operationally strong conc
   },
   {
     name: "Branislav Vorgic",
-    role: "Director of Technology",
+    role: "Director of Technology <br> Partner",
     image: "src/teams/branislav.webp",
     bio: `With 20 years of experience in commercial kitchen equipment production and R&D, Branislav is a 
     seasoned expert in product development and manufacturing optimization. 
@@ -156,7 +156,7 @@ He is known for his ability to turn complex ideas into operationally strong conc
   },
   {
     name: "Filippo Maria Genovesi",
-    role: "Commercial Director",
+    role: "Commercial Director <br> Partner",
     image: "src/teams/filippo.webp",
     bio: `
     With over a decade of specialized experience in the GCC, Filippo combines strong commercial 
