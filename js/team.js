@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
 const teamData = [
   {
     name: "Hassan Anouti",
-    role: "CEO",
+    role: "Group CEO",
     image: "src/teams/hassan.webp",
     bio: `
 With a Master’s in Marketing from Paris-Sorbonne and a BBA from a Swiss hotel management school, Hassan brings over 20 years of experience across hotel operations and kitchen manufacturing, bridging operational hospitality insight with industrial execution.    <div class="bio-divider"> </div>
@@ -71,18 +71,7 @@ With a Master’s in Marketing from Paris-Sorbonne and a BBA from a Swiss hotel 
 He is known for his ability to turn complex ideas into operationally strong concepts that scale, bringing an analytical and results-driven mindset to every project.    </p>
     ` 
   },
-    {
-    name: "Dario Wolfsen",
-    role: "CGO",
-    image: "src/teams/dario.webp",
-    bio: `
-Known for his unique operations led approach, backed by 250 restaurant openings, Dario supports operators with practical solutions, aligning strategy, people and processes to unlock sustainable growth.    
-    <div class="bio-divider"> </div>
-    <p>
-      Leading restaurant growth at a fast scaling GCC based start up, together with his MBA and BBA in Hospitality Management, underpins Dario’s entrepreneurial, strategic and commercial mindset paired with his hands on execution.
-      </p>
-    ` 
-  },
+
   {
     name: "Girish Rao",
     role: "Managing Partner <br> IMEA",
@@ -108,6 +97,18 @@ Known for his unique operations led approach, backed by 250 restaurant openings,
       company and founded Kopa Grilling Solutions and Kook Show Kitchen, focusing on advanced 
       grilling and front-of-house cooking concepts.
     </p>`  
+  },
+      {
+    name: "Dario Wolfsen",
+    role: "Group CGO",
+    image: "src/teams/dario.webp",
+    bio: `
+Known for his unique operations led approach, backed by 250 restaurant openings, Dario supports operators with practical solutions, aligning strategy, people and processes to unlock sustainable growth.    
+    <div class="bio-divider"> </div>
+    <p>
+      Leading restaurant growth at a fast scaling GCC based start up, together with his MBA and BBA in Hospitality Management, underpins Dario’s entrepreneurial, strategic and commercial mindset paired with his hands on execution.
+      </p>
+    ` 
   },
   {
     name: "Paul Richards",
