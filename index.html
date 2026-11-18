@@ -796,14 +796,17 @@
       Sent by FormSubmit (formsubmit.co, free), which emails each application, CV attached, to the address
       in "action". The very first submission only triggers a confirmation email to that address; nothing is
       delivered until someone clicks the link in it. Attachments are capped at 10 MB in total.
-      "_next" is filled in by the script at the bottom, because FormSubmit needs an absolute URL. -->
+      js/career.js sends it in the background to FormSubmit's /ajax/ address, so the visitor stays here and
+      sees the message below instead of FormSubmit's own "Thanks!" page. "action" is still the fallback. -->
     <section id="contactform" class="career-section">
       <div class="career-job__tag">Are you interested?</div>
       <h2 class="section-title career-form__title">Write Us</h2>
 
-      <p id="career-form-sent" class="career-form__sent" hidden>
-        Thank you for your message, we will get back to you as soon as possible.
-      </p>
+      <div id="career-form-sent" class="career-form__sent" hidden>
+        <h3 class="career-form__sent-title">Thank you for your application.</h3>
+        <p>We have received your message and will get back to you as soon as possible.</p>
+      </div>
+      <p id="career-form-error" class="career-form__error" hidden></p>
 
       <form class="career-form" action="https://formsubmit.co/info@nexuskitchengroup.com" method="POST"
         enctype="multipart/form-data">
@@ -811,7 +814,6 @@
         <!-- Set by the job's "Apply Now" button; a visitor who scrolls here directly sends the default. -->
         <input type="hidden" name="Position" id="career-form-position" value="General application">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" id="career-form-next">
         <input type="text" name="_honey" class="career-form__honey" tabindex="-1" autocomplete="off">
 
         <label>Name *

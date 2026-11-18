@@ -1912,11 +1912,37 @@ const CAREER_JOBS = [
   renderJobs();
 })();
 
-// After sending, FormSubmit redirects to "_next": this page with ?sent=1, where the thank-you shows.
+// Sends the application in the background, so the visitor never leaves for FormSubmit's own "Thanks!" page.
+// The /ajax/ address answers JSON: {"success": "true"} once delivered, "false" with a message otherwise.
 (function () {
-  const page = location.origin + location.pathname;
-  document.getElementById('career-form-next').value = page + '?sent=1#contactform';
-  if (new URLSearchParams(location.search).get('sent') === '1') {
-    document.getElementById('career-form-sent').hidden = false;
-  }
+  const form = document.querySelector('.career-form');
+  const sent = document.getElementById('career-form-sent');
+  const error = document.getElementById('career-form-error');
+  const button = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    error.hidden = true;
+    button.disabled = true;
+    button.textContent = 'Sending…';
+    try {
+      const response = await fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form)
+      });
+      const result = await response.json();
+      if (String(result.success) !== 'true') throw new Error(result.message);
+      form.hidden = true;
+      sent.hidden = false;
+      sent.scrollIntoView({ block: 'center' });
+    } catch (e) {
+      error.textContent = 'Your application could not be sent. Please try again, or e-mail us at info@nexuskitchengroup.com.';
+      error.hidden = false;
+      console.error('Career form:', e);
+    } finally {
+      button.disabled = false;
+      button.textContent = 'Send';
+    }
+  });
 })();

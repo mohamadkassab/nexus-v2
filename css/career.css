@@ -243,11 +243,37 @@
   display: none;
 }
 
+/* "display: grid" above would otherwise beat the hidden attribute js/career.js sets after sending. */
+.career-form[hidden] {
+  display: none;
+}
+
+/* Shown in place of the form once it is sent; same box and type as the job cards. */
 .career-form__sent {
   max-width: 800px;
   margin: 30px auto 0;
-  padding: 20px;
+  padding: 40px 30px;
   border: 1px solid #e9e9ea;
+  color: var(--gray-dark);
+}
+
+.career-form__sent .career-form__sent-title {
+  font-size: 22px;
+  line-height: 34px;
+  font-weight: 600;
+  color: #2e2e2e;
+  margin: 0 0 10px;
+}
+
+.career-form__sent p {
+  margin: 0;
+}
+
+.career-form__error {
+  max-width: 800px;
+  margin: 30px auto 0;
+  padding: 15px 20px;
+  border: 1px solid #000;
   font-weight: 500;
 }
 
