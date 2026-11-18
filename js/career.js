@@ -1933,9 +1933,8 @@ const CAREER_JOBS = [
       });
       const result = await response.json();
       if (String(result.success) !== 'true') throw new Error(result.message);
-      form.hidden = true;
-      sent.hidden = false;
-      sent.scrollIntoView({ block: 'center' });
+      form.reset();
+      sent.showModal();
     } catch (e) {
       error.textContent = 'Your application could not be sent. Please try again, or e-mail us at info@nexuskitchengroup.com.';
       error.hidden = false;

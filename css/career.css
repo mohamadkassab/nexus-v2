@@ -243,18 +243,19 @@
   display: none;
 }
 
-/* "display: grid" above would otherwise beat the hidden attribute js/career.js sets after sending. */
-.career-form[hidden] {
-  display: none;
-}
-
-/* Shown in place of the form once it is sent; same box and type as the job cards. */
+/* Popup shown after sending; same border, type and button as the job cards. */
 .career-form__sent {
-  max-width: 800px;
-  margin: 30px auto 0;
+  margin: auto; /* the site's global reset sets margin 0, which pins a dialog to the top-left */
+  max-width: 520px;
+  width: calc(100% - 48px);
   padding: 40px 30px;
   border: 1px solid #e9e9ea;
+  text-align: center;
   color: var(--gray-dark);
+}
+
+.career-form__sent::backdrop {
+  background: rgba(30, 33, 36, 0.6); /* --bg-dark; custom properties do not reach ::backdrop in every browser */
 }
 
 .career-form__sent .career-form__sent-title {
@@ -266,7 +267,7 @@
 }
 
 .career-form__sent p {
-  margin: 0;
+  margin: 0 0 25px;
 }
 
 .career-form__error {
