@@ -761,7 +761,7 @@
 
 
 
-  <!-- CAREERS: jobs are listed in js/career.js -->
+  <!-- CAREERS: the open positions and the application form are on career.html -->
   <div id="careers" class="career-page">
 
     <!-- HERO -->
@@ -774,84 +774,8 @@
         Join a network of specialists, engineers, and innovators shaping the future of professional kitchen
         manufacturing.
       </p>
-      <a class="brand-details-button" href="#openings">Explore Opportunities</a>
+      <a class="brand-details-button" href="career.html">Explore Opportunities</a>
     </section>
-
-    <div class="empty-space light"></div>
-
-    <!-- OPEN POSITIONS -->
-    <section id="openings" class="career-section">
-      <h2 class="section-title">Open Positions</h2>
-      <p class="details-paragraph">Explore career opportunities across our group and brands.</p>
-
-      <div id="career-jobs"></div>
-    </section>
-
-    <div class="line-container">
-      <div class="line-divider"></div>
-    </div>
-    <div class="empty-space light"></div>
-
-    <!-- APPLICATION FORM
-      Sent by FormSubmit (formsubmit.co, free), which emails each application, CV attached, to the address
-      in "action". The very first submission only triggers a confirmation email to that address; nothing is
-      delivered until someone clicks the link in it. Attachments are capped at 10 MB in total.
-      js/career.js sends it in the background to FormSubmit's /ajax/ address, so the visitor stays here and
-      sees the popup below instead of FormSubmit's own "Thanks!" page. "action" is still the fallback. -->
-    <section id="contactform" class="career-section">
-      <div class="career-job__tag">Are you interested?</div>
-      <h2 class="section-title career-form__title">Write Us</h2>
-
-      <dialog id="career-form-sent" class="career-form__sent">
-        <h3 class="career-form__sent-title">Thank you for your application.</h3>
-        <p>We have received your message and will get back to you as soon as possible.</p>
-        <form method="dialog">
-          <button class="brand-details-button">Close</button>
-        </form>
-      </dialog>
-      <p id="career-form-error" class="career-form__error" hidden></p>
-
-      <form class="career-form" action="https://formsubmit.co/info@nexuskitchengroup.com" method="POST"
-        enctype="multipart/form-data">
-        <input type="hidden" name="_subject" id="career-form-subject" value="New career application – Nexus Kitchen Group">
-        <!-- Set by the job's "Apply Now" button; a visitor who scrolls here directly sends the default. -->
-        <input type="hidden" name="Position" id="career-form-position" value="General application">
-        <input type="hidden" name="_template" value="table">
-        <input type="text" name="_honey" class="career-form__honey" tabindex="-1" autocomplete="off">
-
-        <label>Name *
-          <input type="text" name="Name" required>
-        </label>
-        <label>Surname *
-          <input type="text" name="Surname" required>
-        </label>
-        <label>Phone
-          <input type="tel" name="Phone">
-        </label>
-        <label>E-mail *
-          <input type="email" name="email" required>
-        </label>
-        <label class="career-form__wide">Write to us about you *
-          <textarea name="About" rows="6" required></textarea>
-        </label>
-        <label class="career-form__wide">CV (PDF or Word, max 10 MB)
-          <input type="file" name="attachment" accept=".pdf,.doc,.docx">
-        </label>
-
-        <p class="career-form__wide career-form__note">* required</p>
-
-        <label class="career-form__wide career-form__consent">
-          <input type="checkbox" name="Consent" value="Agreed to the processing of personal data" required>
-          By submitting I agree to the processing of personal data.
-        </label>
-
-        <div class="career-form__wide career-form__actions">
-          <button type="submit" class="brand-details-button">Send</button>
-        </div>
-      </form>
-    </section>
-
-    <div class="empty-space light"></div>
   </div>
 
   <!-- FOOTER -->
@@ -965,7 +889,6 @@
 <script src="js/shared.js"></script>
 <script src="js/app.js"></script>
 <script src="js/footer.js"></script>
-<script src="js/career.js"></script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 <script>

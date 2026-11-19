@@ -306,3 +306,8 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* career.html has no dark hero band under the fixed header, so the page itself clears it. */
+.career-page--standalone {
+  margin-top: 60px;
+}
