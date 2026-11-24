@@ -9,7 +9,7 @@
   --gray-dark: #424242;
   --white: #ffffff;
   --gray: #99999a;
-  --content-max: 1100px;
+  --content-max: 1140px;
   --side-gutter: 24px;
 }
 
@@ -1143,11 +1143,11 @@ CEO SECTION
 .ceo-hero-section {
   position: relative;
   width: 100%;
-  height: 800px;
+  height: 100%;
   display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: center;
-  padding: 80px 20px; /* Top/Bottom padding ensures text doesn't hit edges */
+  /* padding: 80px 20px;  */
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -1157,9 +1157,11 @@ CEO SECTION
    inset: 0 is a modern shorthand for top:0; right:0; bottom:0; left:0;
 */
 .ceo-hero-bg {
-  position: absolute;
+  height: fit-content;
+  position: relative;
   inset: 0; 
   z-index: 0;
+  width: 100%;
   background-color: var(--bg-dark);
 }
 
@@ -1168,10 +1170,19 @@ CEO SECTION
 */
 .ceo-hero-bg img {
   width: 100%;
-  height: 100%;
-  object-fit: cover; 
   object-position: center; 
 }
+
+
+
+
+
+@media(min-width:1440px){
+  .ceo-hero-bg img {
+    height: 718px;
+  }
+}
+
 
 .ceo-hero-overlay {
   position: absolute;
@@ -1233,7 +1244,7 @@ CEO SECTION
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
   .ceo-hero-section {
-    padding: 60px 20px;
+    /* padding: 60px 20px; */
     align-items: center;
     height: auto;
   }
@@ -1255,6 +1266,31 @@ CEO SECTION
     bottom: -40px;
     right: 0;
     font-size: 3rem;
+  }
+}
+/* Phones: ceo-msg.webp's printed-in text is unreadable at this width, so the plain photo
+   becomes a background and the real text sits on it. Desktop keeps the printed image. */
+.ceo-msg-content--phone {
+  display: none;
+}
+@media (max-width: 767px) {
+  .ceo-hero-bg {
+    position: absolute;
+    height: auto;
+  }
+  .ceo-hero-bg img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .ceo-hero-overlay {
+    background: rgba(0, 0, 0, 0.65);
+  }
+  .ceo-msg-content--phone {
+    display: block;
+    padding: 70px 30px;
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: center;
   }
 }
 /* 

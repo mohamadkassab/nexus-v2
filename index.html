@@ -6,6 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="format-detection" content="telephone=no">
   <title>Nexus Kitchen Group</title>
+  <meta property="og:title" content="Nexus Kitchen Group" />
+  <meta property="og:description" content="Connecting Factories. Empowering Growth." />
+  <meta property="og:image" content="https://nexuskitchengroup.com/src/landing%20nexus%201.webp" />
+  <meta property="og:url" content="https://nexuskitchengroup.com/" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nexus Kitchen Group" />
+  <meta name="twitter:description" content="Connecting Factories. Empowering Growth." />
+  <meta name="twitter:image" content="https://nexuskitchengroup.com/src/landing%20nexus%201.webp" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
@@ -334,13 +344,33 @@
     <section class="ceo-hero-section">
       <!-- 1. The Background Layer -->
       <div class="ceo-hero-bg">
-        <img src="src/ceo-msg.webp" alt="Hassan Anouti - Nexus Kitchen Group CEO">
+        <picture>
+          <!-- ceo-msg.webp has the message printed into it, which shrinks to ~5px text on a phone.
+               Phones get the plain photo instead, and .ceo-msg-content--phone below carries the words. -->
+          <source media="(max-width: 767px)" srcset="src/ceo-msg-photo.webp">
+          <img src="src/ceo-msg.webp" alt="Hassan Anouti - Nexus Kitchen Group CEO">
+        </picture>
         <!-- The Scrim: Dark overlay to make text readable -->
         <div class="ceo-hero-overlay"></div>
       </div>
 
       <!-- 2. The Content Layer -->
-      <div class="ceo-msg-content">
+      <!-- <div class="ceo-msg-content">
+        <p>
+          Nexus Kitchen Group was created with a simple belief, that the future of our industry belongs to those who
+          build together. Every brand in our group carries its own heritage, yet our strength comes from uniting
+          knowledge, talent, and capability under one vision. We focus on engineering excellence, investing locally,
+          and creating systems that serve chefs, operators, and partners with reliability they can trust. Our goal is
+          not only to manufacture equipment, but to build a lasting heritage, one that grows, adapts, and elevates
+          every brand within it. Nexus Kitchen is our commitment to a better way of building the kitchen industry’s
+          future.
+                  <div class="line-container">
+            <div class="line-divider"></div>
+          </div>
+        </p>
+      </div> -->
+
+      <div class="ceo-msg-content ceo-msg-content--phone">
         <p>
           Nexus Kitchen Group was created with a simple belief, that the future of our industry belongs to those who
           build together. Every brand in our group carries its own heritage, yet our strength comes from uniting
@@ -350,12 +380,8 @@
           every brand within it. Nexus Kitchen is our commitment to a better way of building the kitchen industry’s
           future.
         </p>
-
-        <!-- <div class="ceo-msg-footer">
-      <p>Hassan Anouti</p>
-      <p>Group CEO</p>
-    </div> -->
       </div>
+
     </section>
 
     <!-- VALUES & PHILOSOFY-->
@@ -397,7 +423,42 @@
             </div>
           </div>
 
+          <div id="shared-knowledge" class="item">
+            <div class="pimcore_area_text-image-full-width pimcore_area_content ">
+              <section class="area-text-image-full ">
+                <div class="row">
+                  <div class="container">
+                    <div class="col-xs-12 text-wrapper">
+                      <h2 class="slider-title">Shared Knowledge
 
+                      </h2>
+                      <div class="collaboration-paragraph">
+                        <p class="slider-paragraph">
+                          Expertise grows when it is transferred. We document, teach,
+
+                          and mentor across teams and countries, so skills, standards, and improvements
+
+                          are replicated consistently and raise the bar for everyone.
+
+                        </p>
+                      </div>
+                      <!-- <span class="button"><a href="https://www.thenicekitchen.com/en/Tecnologia" type="internal">TNK
+                          technology</a></span> -->
+                    </div>
+                    <div class="col-xs-12 image-wrapper">
+                      <picture data-alt="" data-default-src="src/knowledge.webp">
+                        <source srcset="src/knowledge.webp 2x" media="(max-width: 768px)" type="image/webp">
+                        <source srcset="src/knowledge.webp 2x" media="(max-width: 768px)" type="image/jpeg">
+                        <source srcset="src/knowledge.webp 1x" type="image/webp">
+                        <source srcset="src/knowledge.webp 1x, src/knowledge.webp 2x" type="image/jpeg">
+                        <img alt="" title="" src="src/knowledge.webp">
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
 
           <div id="craftsmanship" class="item">
             <div class="pimcore_area_text-image-full-width pimcore_area_content ">
@@ -409,9 +470,11 @@
                       </h2>
                       <div class="collaboration-paragraph">
                         <p class="slider-paragraph">
-                        We plan and invest for the long term by building production closer to the markets we serve. 
-                        Local factories support our customers in close proximity to their operations, reduce transport, 
-                        strengthen supply-chain resilience, and enable the development of skilled teams rooted in the regions where we operate.
+                          We plan and invest for the long term by building production closer to the markets we serve.
+                          Local factories support our customers in close proximity to their operations, reduce
+                          transport,
+                          strengthen supply-chain resilience, and enable the development of skilled teams rooted in the
+                          regions where we operate.
                         </p>
                       </div>
                     </div>
@@ -748,19 +811,6 @@
   <div class="empty-space light"></div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   <!-- CAREERS: the open positions and the application form are on career.html -->
   <div id="careers" class="career-page">
 
@@ -925,17 +975,44 @@
 </script>
 
 <script>
-  //<!--
   $(document).ready(function ($) {
-    $('#gallery-carousel-69161a290386d, #gallery-carousel-2').slick({
+    $('#gallery-carousel-69161a290386d').slick({
       dots: true,
-      autoplay: true,
-      autoplaySpeed: 3000,
+      autoplay: false,
+      autoplaySpeed: 6000,
       pauseOnHover: false,
       pauseOnFocus: false,
     });
   });
-  //-->
+</script>
+
+<script>
+  $(document).ready(function ($) {
+    const $carousel = $('#gallery-carousel-2');
+
+    $carousel.slick({
+      dots: true,
+      autoplay: false,
+      autoplaySpeed: 3000,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+    });
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            $carousel.slick('slickPlay');
+          } else {
+            $carousel.slick('slickPause');
+          }
+        });
+      });
+      observer.observe($carousel[0]);
+    } else {
+      $carousel.slick('slickPlay');
+    }
+  });
 </script>
 
 
