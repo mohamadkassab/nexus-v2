@@ -302,8 +302,9 @@
     flex-wrap: wrap;
   }
 
+  /* minmax(0, …): a plain 1fr track will not shrink below the file input's natural width. */
   .career-form {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 

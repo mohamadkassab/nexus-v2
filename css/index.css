@@ -30,6 +30,18 @@ body {
   line-height: 1.4;
 }
 
+/* The closed mobile menu (.nav-links) waits off-screen at right:-100%. iOS Safari ignores
+   overflow-x on <body> alone and lets the page pan sideways to it, so the root clips too.
+   body uses clip, not hidden: with <html> also clipping, body:hidden would make <body> its
+   own scroll container and break position:sticky. Older Safari drops clip and keeps the
+   body:hidden from styles-en.css. */
+html {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: clip;
+}
+
 a {
   text-decoration: none !important;
 }
@@ -539,8 +551,9 @@ hr,
     margin-right: -12px !important;
   }
   
+  /* Six logos + gaps need 350px at 50px each; scale down below ~385px screens. */
   .hero-logos .logo-box img {
-    max-width: 50px;
+    max-width: min(50px, 13vw);
     opacity: 0.98;
   }
 
